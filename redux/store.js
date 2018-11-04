@@ -15,18 +15,20 @@ const middlewares = [
   applyMiddleware(routerMiddleware(history))
 ];
 
-const store =
-  process.env.NODE_ENV === "development"
-    ? createStore(
-        reducer,
-        {},
-        compose(
-          ...middlewares,
-          window.__REDUX_DEVTOOLS_EXTENSION__ &&
-            window.__REDUX_DEVTOOLS_EXTENSION__()
-        )
-      )
-    : createStore(reducer, {}, compose(...middlewares));
+// const store =
+//   process.env.NODE_ENV === "development"
+//     ? createStore(
+//         reducer,
+//         {},
+//         compose(
+//           ...middlewares,
+//           window.__REDUX_DEVTOOLS_EXTENSION__ &&
+//             window.__REDUX_DEVTOOLS_EXTENSION__()
+//         )
+//       )
+//     : createStore(reducer, {}, compose(...middlewares));
+
+const store = createStore(reducer, {}, compose(...middlewares));
 
 sagaMiddleware.run(saga);
 
