@@ -6,7 +6,6 @@ import store from "store";
 import type { Props, State } from "./types";
 import Select from "react-select";
 import ClassesCard from "components/FlightCard";
-import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 
 class FlightsList extends PureComponent<Props, State> {
   state = {

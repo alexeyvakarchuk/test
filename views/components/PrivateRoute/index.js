@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class PrivateRoute extends PureComponent<Props, State> {
   render() {
-    return window.localStorage.pivotUserEmail ? (
+    return window.localStorage.flightAppUserName ? (
       <Route render={() => this.props.render()} />
     ) : (
       <Redirect
